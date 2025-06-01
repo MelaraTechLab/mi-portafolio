@@ -19,6 +19,7 @@
 
 .angled-orbit {
   transform: rotateX(65deg) rotateZ(10deg) rotateY(-20deg);
+  transform-style: preserve-3d;
 }
 
 .circle-layer {
@@ -42,18 +43,56 @@
 .layer-d2 {
   z-index: 3;
   transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0;
 }
 .layer-d {
   z-index: 2;
   transform: translate(-50%, -50%) scale(1.2);
+  opacity: 0;
 }
 .layer-niequan {
   z-index: 1;
   transform: translate(-50%, -50%) scale(0.9);
-  opacity: 0.3;
+  opacity: 0;
 }
 .layer-top-offset {
   z-index: 6;
   transform: translate(-30%, -90%) scale(1.1);
-  opacity: 0.4;
+  opacity: 0;
+}
+
+.orbit-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%) translateX(-40px) translateY(-30px);
+  transform-origin: center center;
+  z-index: 7;
+}
+
+.orbit-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center center;
+}
+
+/* .orbit-icon-inner {
+  transform: rotateX(-65deg) rotateZ(-10deg) rotateY(20deg) scaleY(1.5);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+} */
+
+.orbit-icon img {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  pointer-events: auto;
+  backface-visibility: hidden;
 }
